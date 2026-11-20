@@ -6,7 +6,15 @@ The design assumes a job can run more than once. Handlers must be idempotent, re
 
 ## Current state
 
-Day one: repository bootstrap and a minimal API health endpoint. Job submission, persistence, and workers are not implemented yet.
+The API has a health endpoint. Job submission, persistence, and workers are not implemented yet.
+
+## Start PostgreSQL
+
+```sh
+docker compose up -d postgres
+```
+
+The local database is available at `localhost:5432` with database and user `jobs` and password `jobs`. Stop it with `docker compose down`; the database volume is kept between runs.
 
 ## Run the API
 
